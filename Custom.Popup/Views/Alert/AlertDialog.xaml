@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Custom.Popup.Views.Alert.AlertDialog"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup">
+    <ContentView HorizontalOptions="FillAndExpand" VerticalOptions="Center" BackgroundColor="Transparent" HeightRequest="600">
+        <StackLayout BackgroundColor="Transparent" Padding="10"  VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
+            <Frame CornerRadius="10" HorizontalOptions="Fill"  Padding="10" BorderColor="#75dfa8" x:Name="OkAlert" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="10" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="10" />
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding AlertTitle}" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="17" TextColor="#696969"></Label>
+                    <Label Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" HorizontalOptions="CenterAndExpand"  Text="{Binding AlertMessage}" FontSize="14" TextColor="#696969"></Label>
+                   
+                    <Button Grid.Row="5" Grid.Column="1"  Text="{Binding OkButtonText}" BackgroundColor="#75dfa8" CornerRadius="10" TextColor="White" Clicked="Confirm_Clicked">
+                       
+                    </Button>
+                </Grid>
+            </Frame>
+            <Frame CornerRadius="10" HorizontalOptions="Fill"  Padding="10" BorderColor="#9a9a9a" x:Name="ConfirmationAlert">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="10" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="10" />
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding AlertTitle}" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="17" TextColor="#696969"></Label>
+                    <Label Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" HorizontalOptions="CenterAndExpand"  Text="{Binding AlertMessage}" FontSize="14" TextColor="#696969"></Label>
+                    <Button Grid.Row="5" Grid.Column="1"  Text="{Binding ConfirmationNoButtonText}" BackgroundColor="#f2f2f2" BorderColor="#fc453a" BorderWidth="1" CornerRadius="10" TextColor="#737373" Clicked="Cancel_Clicked">
+                    </Button>
+                    <Button Grid.Row="5" Grid.Column="2"  Text="{Binding ConfirmationYesButtonText}" BackgroundColor="#f2f2f2" BorderColor="#75dfa8" BorderWidth="1" CornerRadius="10" TextColor="#737373" Clicked="Confirm_Clicked">
+                       
+                    </Button>
+                </Grid>
+            </Frame>
+        </StackLayout>
+    </ContentView>
+</pages:PopupPage>
